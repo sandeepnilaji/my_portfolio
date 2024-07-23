@@ -26,6 +26,8 @@
             @include mobile {
                 align-items: flex-start;
                 height: 30vh !important;
+                width: 100%;
+                margin: 50px 0px 0px;
             }
 
             img {
@@ -41,7 +43,9 @@
 
         .icondiv {
             @include mobile {
-                margin-left: 260px !important;
+                margin-left: 0px !important;
+                display: flex;
+                justify-content: center;
                 height: 15%;
                 gap: 0% !important;
 
