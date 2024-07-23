@@ -1,0 +1,18 @@
+$mainColor: #c6cfff;
+$bgColor: #161024;
+$btnBgColor: #c573e6e1;
+$width: 768px;
+
+body {
+    background-color: $bgColor;
+}
+
+@mixin mobile {
+    @media (max-width: #{$width}) {
+        @content;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
