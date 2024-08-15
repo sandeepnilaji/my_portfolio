@@ -7,6 +7,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Testimonials from "./components/testimonials/Testimonials";
 import Topbar from "./components/topbar/Topbar";
 import Works from "./components/works/Works";
+import ExperienceTimeline from "./components/experience/ExperienceTimeline";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,6 +18,7 @@ export default function Home() {
       <div className="sections">
         <Intro />
         <Portfolio />
+        <ExperienceTimeline />
         <Works />
         <Testimonials />
         <Contact />
