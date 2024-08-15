@@ -1,15 +1,25 @@
 @import "../../global.scss";
+
 .skillsSide {
-  @include mobile {
-    h1 {
-      text-align: center;
-      margin-left: 0% !important;
-      font-size: 20px !important;
+  padding: 2% 0;
+  text-align: center;
+  background-color: $bgColor;
+  /* Gradient background */
+  background-size: cover;
+
+  .skillsTitle {
+    margin: 2% 0;
+    font-size: 50px;
+    color: aliceblue;
+
+    @include mobile {
+      font-size: 20px;
       margin-top: 15%;
     }
   }
+
   .works {
-    box-shadow: 0 0 10px 0px rgba(119, 53, 136, 0.459) !important;
+    height: 430px;
     border-radius: 10px;
     max-width: 80%;
     margin: auto;
@@ -17,43 +27,58 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    background-color: transparent;
+    /* Transparent background */
+
     @include mobile {
-      border-radius: 10px;
       max-width: 100%;
-      margin: auto;
-      margin-left: 5%;
-      height: 405px !important;
-    }
-    h2 {
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      margin-top: 20px;
-      color: white;
+      margin: 5%;
+      height: 405px;
     }
 
     .img_cont {
-      // margin-top: 150px;
+      display: flex;
+      gap: 20px 3%;
       align-items: center;
       justify-content: center;
-      display: flex;
-      gap: 3%;
-      img {
-        width: 100%;
-        height: 100px;
-      }
+      flex-wrap: wrap;
+    
       @include mobile {
-        // margin-top: 50px;
         display: grid;
         grid-template-columns: repeat(2, 40%);
+        
+      }
+
+      .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // border: 1px solid white;
         img {
-          width: 100%;
-          height: 50px;
-          margin-top: 8px !important;
+          width: 100px;
+          height: 100px;
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          @include mobile {
+            width: 50px;
+            height: 50px;
+          }
         }
+
         p {
-          font-weight: normal !important;
-          font-size: 12px !important;
+          color: aliceblue;
+          font-weight: bolder;
+          text-align: center;
+
+          @include mobile {
+            font-weight: normal;
+            font-size: 12px;
+          }
         }
       }
     }

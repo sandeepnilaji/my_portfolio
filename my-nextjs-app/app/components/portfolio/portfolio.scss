@@ -1,7 +1,21 @@
+@import "../../global.scss";
+
+.portfolio {
+  background-color: $bgColor;
+  color: aliceblue;
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 48px;
+    text-align: center;
+    padding-top: 40px;
+  }
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -11,13 +25,15 @@
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  border-radius: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 
   &:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   }
 
   &__image {
@@ -29,6 +45,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 
@@ -77,9 +98,10 @@
     font-size: 0.9rem;
     text-align: center;
     transition: background-color 0.3s ease;
+    align-self: flex-start;
 
     &:hover {
-      background-color: #000000;
+      background-color: #333333;
     }
   }
 }

@@ -1,7 +1,7 @@
 @import "../../global.scss";
 
 .intro {
-    background-color: $bgColor;
+    background: linear-gradient(135deg, $bgColor, darken($bgColor, 10%));
     display: flex;
     color: aliceblue;
     justify-content: center;
@@ -22,6 +22,15 @@
             align-items: flex-end;
             justify-content: center;
             margin: 50px 150px 0px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
 
             @include mobile {
                 align-items: flex-start;
@@ -32,6 +41,11 @@
 
             img {
                 height: 100%;
+                transition: filter 0.3s ease;
+
+                &:hover {
+                    filter: brightness(1.1);
+                }
 
                 @include mobile {
                     height: 28vh;
@@ -42,9 +56,13 @@
         }
 
         .icondiv {
+            display: flex;
+            gap: 40px;
+            margin-left: 260px;
+            margin-top: 25px;
+
             @include mobile {
                 margin-left: 0px !important;
-                display: flex;
                 justify-content: center;
                 height: 15%;
                 gap: 0% !important;
@@ -64,8 +82,6 @@
                 margin-left: 0px !important;
             }
         }
-
-        @include mobile {}
     }
 
     .right {
@@ -85,19 +101,24 @@
             justify-content: center;
             flex-direction: column;
 
-            h2 {
-                margin-top: 4vh;
-            }
-
             @include mobile {
                 padding-left: 0;
                 align-items: center;
                 height: 60vh;
             }
 
+            h1,
+            h2,
+            h3 {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
             h1 {
                 font-size: 60px;
                 margin: 10px 0;
+                background: linear-gradient(45deg, #cd5ff8, #ff8a00);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
 
                 @include mobile {
                     font-size: 20px;
@@ -108,6 +129,7 @@
 
             h2 {
                 font-size: 35px;
+                margin-top: 4vh;
 
                 @include mobile {
                     font-size: 20px;
@@ -116,22 +138,9 @@
                 }
             }
 
-            p {
-                @include mobile {
-                    font-size: 13px !important;
-                    text-align: justify !important;
-                }
-            }
-
-            button {
-                @include mobile {
-                    height: 35px !important;
-                    overflow-y: hidden !important;
-                }
-            }
-
             h3 {
                 font-size: 30px;
+                margin-top: 30px;
 
                 @include mobile {
                     font-size: 20px;
@@ -158,6 +167,25 @@
                     }
                 }
             }
+
+            p {
+                font-size: 20px;
+                text-align: justify;
+                line-height: 1.6;
+                margin-bottom: 20px;
+
+                @include mobile {
+                    font-size: 13px !important;
+                    text-align: justify !important;
+                }
+            }
+
+            button {
+                @include mobile {
+                    height: 35px !important;
+                    overflow-y: hidden !important;
+                }
+            }
         }
 
         a {
@@ -168,6 +196,12 @@
             img {
                 width: 30px;
                 animation: arrowBlink 2s infinite;
+                transform: rotate(90deg);
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(5px) rotate(90deg);
+                }
 
                 @include mobile {
                     display: none !important;
