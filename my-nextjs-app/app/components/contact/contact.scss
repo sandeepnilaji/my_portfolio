@@ -8,6 +8,7 @@
   margin-top: 8vh;
   height: 500px;
   color: aliceblue;
+
   @include mobile {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -21,10 +22,12 @@
       margin-top: 40px !important;
       margin: auto;
       width: 60%;
+
       @include mobile {
         width: 70% !important;
       }
     }
+
     .box1 {
       display: flex;
       gap: 4%;
@@ -32,23 +35,33 @@
       width: 80%;
       padding: 4%;
       box-shadow: 0px 0px 15px -8px black;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateX(10px);
+      }
+
       div {
         margin-top: 5px;
       }
+
       @include mobile {
         width: 100%;
         padding: 2%;
       }
     }
   }
+
   .right {
     display: flex;
     flex-direction: column;
+
     img {
       @include mobile {
         height: 80px !important;
       }
     }
+
     h1 {
       @include mobile {
         justify-content: center !important;
@@ -56,65 +69,19 @@
         margin-bottom: 5px;
       }
     }
+
     margin-left: 150px;
+
     @include mobile {
       margin-left: 0px;
     }
+
     h1 {
       font-size: 30px;
     }
-
-    form {
-      width: 70%;
-      height: 70%;
-      display: flex;
-      flex-direction: column;
-      // align-items: center;
-      justify-content: space-around;
-
-      input {
-        width: 300px;
-        height: 30px;
-        font-size: 14px;
-
-        @include mobile {
-          width: 200px;
-          height: 20px;
-        }
-      }
-
-      textarea {
-        width: 300px;
-        height: 200px;
-        font-size: 14px;
-
-        @include mobile {
-          width: 200px;
-          height: 100px;
-        }
-      }
-
-      button {
-        width: 150px;
-        height: 30px;
-        color: white;
-        background-color: crimson;
-        border: none;
-        border-radius: 10px;
-        font-weight: 500;
-        cursor: pointer;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      span {
-        color: green;
-      }
-    }
   }
 }
+
 .social-icons {
   width: 40px !important;
   height: 40px !important;
@@ -124,4 +91,48 @@
   background: hsla(0, 0%, 100%, 0.972) !important;
   border-radius: 50% !important;
   transition: 0.5s !important;
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-title {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.animate-image {
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.animate-box {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@for $i from 1 through 5 {
+  .animate-box:nth-child(#{$i}) {
+    animation-delay: #{$i * 0.1}s;
+  }
 }
